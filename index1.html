@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keerthanaa GS — Product Manager</title>
+<meta name="description" content="Product Manager who builds from both sides of the ship date. Developer → PM → Solutions Architect. B2B SaaS, 0→1 products, AI-assisted building.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,550;0,9..144,650;1,9..144,450&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0E14;
+  --ink-2:#111621;
+  --paper:#E9E6DF;
+  --paper-dim:#A7ACB8;
+  --amber:#F2A03D;
+  --steel:#7D8CA3;
+  --line:rgba(233,230,223,.13);
+  --green:#7FC98B;
+  --maxw:880px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:'Public Sans',system-ui,sans-serif;
+  font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--amber);color:var(--ink)}
+a{color:var(--paper);text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+/* ---------- mono utility ---------- */
+.mono{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.06em}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel)}
+
+/* ---------- status chips ---------- */
+.chip{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.1em;padding:3px 9px;border-radius:3px;vertical-align:middle;
+  border:1px solid var(--line);color:var(--paper-dim);white-space:nowrap;
+}
+.chip.shipped{color:var(--green);border-color:rgba(127,201,139,.35)}
+.chip.adopted{color:var(--amber);border-color:rgba(242,160,61,.4)}
+.chip.build{color:var(--steel);border-color:rgba(125,140,163,.4)}
+.chip.case{color:var(--paper);border-color:rgba(233,230,223,.3)}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(11,14,20,.85);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:14px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.nav-name{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em}
+.nav-name .dot{color:var(--amber)}
+.nav-links{display:flex;gap:22px}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--paper-dim);transition:color .15s}
+.nav-links a:hover{color:var(--amber)}
+@media(max-width:560px){.nav-links{gap:14px}.nav-links a:nth-child(3){display:none}}
+
+/* ---------- hero ---------- */
+header{padding:96px 0 72px;border-bottom:1px solid var(--line)}
+.hero-status{display:flex;align-items:center;gap:10px;margin-bottom:34px}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(127,201,139,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,201,139,.45)}70%{box-shadow:0 0 0 9px rgba(127,201,139,0)}100%{box-shadow:0 0 0 0 rgba(127,201,139,0)}}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none}}
+h1{
+  font-family:'Fraunces',serif;font-weight:550;
+  font-size:clamp(38px,6.4vw,64px);line-height:1.06;letter-spacing:-.015em;
+  max-width:15ch;
+}
+h1 em{font-style:italic;font-weight:450;color:var(--amber)}
+.hero-sub{margin-top:28px;max-width:56ch;color:var(--paper-dim);font-size:18px}
+.hero-sub strong{color:var(--paper);font-weight:600}
+.arc{margin-top:36px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--steel);letter-spacing:.04em}
+.arc b{color:var(--paper);font-weight:500}
+.arc .arrow{color:var(--amber);margin:0 8px}
+.hero-cta{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;
+  padding:11px 20px;border:1px solid var(--line);border-radius:4px;
+  color:var(--paper);transition:border-color .15s,background .15s,color .15s;
+}
+.btn:hover{border-color:var(--amber);color:var(--amber)}
+.btn.primary{background:var(--amber);color:var(--ink);border-color:var(--amber);font-weight:500}
+.btn.primary:hover{background:#f7b25d;color:var(--ink)}
+
+/* ---------- sections ---------- */
+section{padding:76px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:44px;flex-wrap:wrap}
+h2{font-family:'Fraunces',serif;font-weight:550;font-size:clamp(26px,3.6vw,34px);letter-spacing:-.01em}
+.sec-note{color:var(--steel);font-size:14px;max-width:38ch;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em}
+
+/* ---------- log entries (proof of work) ---------- */
+.log{display:flex;flex-direction:column}
+.entry{
+  display:grid;grid-template-columns:150px 1fr;gap:28px;
+  padding:34px 0;border-top:1px solid var(--line);
+}
+.entry:first-child{border-top:none;padding-top:0}
+.entry-meta{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.entry-meta time{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--steel);letter-spacing:.06em}
+h3{font-family:'Fraunces',serif;font-weight:550;font-size:22px;letter-spacing:-.005em;margin-bottom:10px}
+.entry p{color:var(--paper-dim);font-size:16px;max-width:62ch}
+.entry p+p{margin-top:10px}
+.entry .hl{color:var(--paper)}
+.entry-links{margin-top:16px;display:flex;gap:18px;flex-wrap:wrap}
+.entry-links a{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.05em;color:var(--amber);border-bottom:1px solid rgba(242,160,61,.35);padding-bottom:2px;transition:border-color .15s}
+.entry-links a:hover{border-color:var(--amber)}
+@media(max-width:640px){.entry{grid-template-columns:1fr;gap:12px}.entry-meta{flex-direction:row;align-items:center;gap:12px}}
+
+/* ---------- case study ---------- */
+.case-box{
+  border:1px solid var(--line);border-radius:8px;background:var(--ink-2);
+  padding:40px;margin-top:8px;
+}
+.case-box h3{font-size:24px;margin-bottom:6px}
+.case-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--amber);letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:26px}
+@media(max-width:640px){.case-grid{grid-template-columns:1fr}.case-box{padding:28px 22px}}
+.case-cell h4{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin-bottom:9px}
+.case-cell p{color:var(--paper-dim);font-size:15.5px}
+.case-cell p b{color:var(--paper);font-weight:600}
+.case-footer{margin-top:28px;padding-top:22px;border-top:1px solid var(--line);color:var(--paper-dim);font-size:15.5px;font-style:italic}
+.case-footer b{color:var(--paper);font-style:normal}
+
+/* ---------- version history ---------- */
+.versions{display:flex;flex-direction:column}
+.ver{display:grid;grid-template-columns:120px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line)}
+.ver:first-child{border-top:none;padding-top:0}
+.ver-tag{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--amber);font-weight:500}
+.ver-tag span{display:block;color:var(--steel);font-size:11.5px;margin-top:5px;font-weight:400;letter-spacing:.05em}
+.ver h3{font-size:19px;font-family:'Public Sans',sans-serif;font-weight:600;letter-spacing:0}
+.ver p{color:var(--paper-dim);font-size:15.5px;margin-top:6px;max-width:60ch}
+@media(max-width:640px){.ver{grid-template-columns:1fr;gap:8px}}
+
+/* ---------- how I work ---------- */
+.beliefs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.belief{background:var(--ink);padding:30px 28px}
+.belief h3{font-size:17px;font-family:'Public Sans',sans-serif;font-weight:600;letter-spacing:0;margin-bottom:8px}
+.belief h3 .n{font-family:'IBM Plex Mono',monospace;color:var(--amber);font-size:13px;margin-right:10px}
+.belief p{color:var(--paper-dim);font-size:15px}
+@media(max-width:640px){.beliefs{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+footer{padding:88px 0 64px}
+footer h2{font-size:clamp(30px,5vw,44px);max-width:18ch}
+footer h2 em{font-style:italic;color:var(--amber);font-weight:450}
+.foot-links{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.foot-meta{margin-top:56px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--steel);font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="nav-name" href="#top">keerthanaa.gs<span class="dot">_</span></a>
+    <div class="nav-links">
+      <a href="#work">proof of work</a>
+      <a href="#case">case study</a>
+      <a href="#versions">version history</a>
+      <a href="mailto:gskeerthanaa22@gmail.com">contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="hero-status">
+      <span class="pulse" aria-hidden="true"></span>
+      <span class="mono" style="color:var(--paper-dim)">STATUS: Solutions Architect @ Fieldproxy (YC W22) &middot; open to product roles</span>
+    </div>
+    <h1>I build products from <em>both sides</em> of the ship date.</h1>
+    <p class="hero-sub">Most PMs hand off at launch. I've written the production code <strong>before</strong> a product ships, defined the roadmap <strong>while</strong> it ships, and deployed it into enterprise clients <strong>after</strong> it ships. This page is the log of what that looks like.</p>
+    <p class="arc"><b>v1</b> Full-Stack Developer <span class="arrow">&rarr;</span> <b>v2</b> Product Manager <span class="arrow">&rarr;</span> <b>v3</b> Solutions Architect</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="#work">Read the shipping log</a>
+      <a class="btn" href="https://www.linkedin.com/in/keerthanaags" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/keerthanaa-gs" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Proof of work</h2>
+      <span class="sec-note">// a changelog, because that's what a career actually is</span>
+    </div>
+    <div class="log">
+
+      <article class="entry reveal">
+        <div class="entry-meta">
+          <span class="chip shipped">SHIPPED</span>
+          <time>2025</time>
+        </div>
+        <div>
+          <h3>ThingConnect Pulse — 0&rarr;1 launch</h3>
+          <p>A free network-monitoring tool for factories, taken from idea to public launch as the <span class="hl">only PM at MachDatum</span>. The insight from competitive research: every existing tool was built for IT teams — heavy, expensive, painful. Nobody was building for a plant engineer with five minutes and no IT department.</p>
+          <p>That became the entire positioning — <span class="hl">five-minute setup, zero dependencies</span>. I owned discovery, MVP scope, PRDs, and the flows and wireframes (no designer), working daily with a 4-member engineering team. Distribution went where the users actually were: manufacturing communities and a Discord that became a live feedback loop feeding the roadmap.</p>
+        </div>
+      </article>
+
+      <article class="entry reveal">
+        <div class="entry-meta">
+          <span class="chip adopted">ADOPTED</span>
+          <time>2026</time>
+        </div>
+        <div>
+          <h3>The internal changelog everyone reads</h3>
+          <p>At Fieldproxy, product changes shipped constantly but knowledge of <em>what changed</em> lived in scattered Slack threads. Client-facing people kept getting surprised by the platform they were deploying. So I built a weekly product-update site — a living changelog — and kept it current.</p>
+          <p>How I know it stuck: people stopped asking "when did this change?" in Slack and started checking the site. <span class="hl">Nobody chases a tool they've stopped using.</span> (This page is designed after it, for the same reason.)</p>
+        </div>
+      </article>
+
+      <article class="entry reveal">
+        <div class="entry-meta">
+          <span class="chip case">CASE STUDY</span>
+          <time>2026</time>
+        </div>
+        <div>
+          <h3>Encrypted data ingestion for a financial services client</h3>
+          <p>A messy manual process turned into a shipped, secure automation — mapped end to end, scoped honestly, handed to engineering with the two lists that keep enterprise projects alive: <span class="hl">confirmed capabilities vs. still-under-feasibility</span>.</p>
+          <div class="entry-links"><a href="#case">Read the case study &darr;</a></div>
+        </div>
+      </article>
+
+      <article class="entry reveal">
+        <div class="entry-meta">
+          <span class="chip build">IN BUILD</span>
+          <time>2026</time>
+        </div>
+        <div>
+          <h3>Requirements Agent</h3>
+          <p>An AI agent that turns raw client-call notes into a structured requirements doc — every item tagged <span class="hl">Confirmed / Needs validation / Open question</span>. It automates the discipline I apply manually on every enterprise account, where blurring those categories is how projects blow up.</p>
+        </div>
+      </article>
+
+      <article class="entry reveal">
+        <div class="entry-meta">
+          <span class="chip build">IN BUILD</span>
+          <time>2026</time>
+        </div>
+        <div>
+          <h3>Migration Copilot</h3>
+          <p>The tool I wished existed across six enterprise migrations: upload a messy legacy export, get a data-quality profile, an AI-proposed field mapping to the target schema, and the risks flagged <span class="hl">before</span> import instead of in production.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="case">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Case study</h2>
+      <span class="sec-note">// from "someone complained" to shipped automation</span>
+    </div>
+    <div class="case-box reveal">
+      <div class="case-kicker">Enterprise integration &middot; Financial services &middot; Fieldproxy</div>
+      <h3>Moving sensitive data without a human in the middle</h3>
+      <div class="case-grid">
+        <div class="case-cell">
+          <h4>The complaint</h4>
+          <p>A financial services client needed sensitive data flowing into our platform regularly. The existing way was manual — files prepared and uploaded by hand — which for a regulated company meant <b>every transfer was a security question waiting to be asked</b>.</p>
+        </div>
+        <div class="case-cell">
+          <h4>Mapping the real process</h4>
+          <p>I walked their actual flow, not the assumed one: where data originates, who touches it, what happens when a file is malformed, what security needed to sign off. The real requirement wasn't "upload files" — it was <b>"move sensitive data on a schedule without a human being the risk."</b></p>
+        </div>
+        <div class="case-cell">
+          <h4>Worth solving?</h4>
+          <p>Recurring, not one-time — every manual cycle cost effort and carried risk, and it blocked the account from scaling. The harder call was scope: <b>what we commit to now versus later.</b></p>
+        </div>
+        <div class="case-cell">
+          <h4>The handoff</h4>
+          <p>A spec for automated encrypted ingestion (AES-256), covering the format contract, encryption approach, and how malformed data fails <b>loudly instead of silently</b>. Two explicit lists went to both engineering and the client: confirmed capabilities vs. feasibility-check items — so nobody built, or was promised, something unvalidated.</p>
+        </div>
+      </div>
+      <p class="case-footer"><b>The lesson that stuck:</b> clients don't buy features. They buy confidence that someone owns the outcome — and that confidence is built in the gap between "confirmed" and "we're still checking."</p>
+    </div>
+  </div>
+</section>
+
+<section id="versions">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Version history</h2>
+      <span class="sec-note">// each role was research for the next one</span>
+    </div>
+    <div class="versions">
+      <div class="ver reveal">
+        <div class="ver-tag">v3.0<span>2026 — now</span></div>
+        <div>
+          <h3>Solutions Architect &middot; Fieldproxy (YC W22)</h3>
+          <p>Enterprise onboarding and data migrations end to end — financial services, healthcare, e-commerce, retail. Debugging production PostgreSQL inside a low-code platform, driving platform gaps into the product backlog, piloting AI integration patterns. This is where product decisions meet what clients actually do with them.</p>
+        </div>
+      </div>
+      <div class="ver reveal">
+        <div class="ver-tag">v2.0<span>2024 — 2026</span></div>
+        <div>
+          <h3>Product Manager &middot; MachDatum</h3>
+          <p>Sole PM for Industrial IoT and CMMS products. Discovery, PRDs, MVP scope, competitive teardowns across the IIoT landscape — and one public launch. Learned that the job is mostly deciding what <em>not</em> to build.</p>
+        </div>
+      </div>
+      <div class="ver reveal">
+        <div class="ver-tag">v1.0<span>2024</span></div>
+        <div>
+          <h3>Full-Stack Developer &middot; MachDatum</h3>
+          <p>React, .NET Core, PostgreSQL in production. Cut a real-time dashboard's load from 8s to under 2s. Learned how things get built — which now makes every feasibility conversation faster and every promise more honest.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>How I work</h2>
+      <span class="sec-note">// opinions formed by shipping, not reading</span>
+    </div>
+    <div class="beliefs reveal">
+      <div class="belief">
+        <h3><span class="n">01</span>PM is not PRD generation</h3>
+        <p>Anyone can generate a spec with AI now. The job is what's around it: understanding users, making trade-offs, and owning whether the outcome actually happened.</p>
+      </div>
+      <div class="belief">
+        <h3><span class="n">02</span>Confirmed &ne; probably</h3>
+        <p>Every enterprise project I've run stays alive on one discipline: never letting "what we've confirmed" blur into "what we're still validating" — with clients or with engineering.</p>
+      </div>
+      <div class="belief">
+        <h3><span class="n">03</span>Build with AI, verify like it's client data</h3>
+        <p>I use Claude Code and Cursor daily. AI output gets the same distrust as a legacy data export: guards, validation, review. "Usually correct" is a failure mode in production.</p>
+      </div>
+      <div class="belief">
+        <h3><span class="n">04</span>Adoption is the only compliment</h3>
+        <p>Kind feedback is noise. The signal is whether people come back tomorrow without being asked — and complain when it's missing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2 class="reveal">The next entry in this log could be <em>your product.</em></h2>
+    <div class="foot-links reveal">
+      <a class="btn primary" href="mailto:gskeerthanaa22@gmail.com">gskeerthanaa22@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/keerthanaags" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/keerthanaa-gs" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="foot-meta">
+      <span>KEERTHANAA GS &middot; CHENNAI, IN</span>
+      <span>BUILT BY HAND, ASSISTED BY AI &middot; 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
